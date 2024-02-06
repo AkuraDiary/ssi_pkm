@@ -1,4 +1,3 @@
-import numpy as np
 import cv2
 
 
@@ -26,15 +25,16 @@ def runFaceRecognition(capture, faceCascade):
             roi_color = img[y:y + h, x:x + w]
         cv2.imshow('video', img)
         k = cv2.waitKey(30) & 0xff
-        if k == 27: #press ESC to quit
+        if k == 27:  # press ESC to quit
             finish(capture)
             break
+
 
 def finish(capture):
     capture.release()
     cv2.destroyAllWindows()
 
+
 if __name__ == '__main__':
     print("Press ESC to quit")
     initFaceRecognition()
-
